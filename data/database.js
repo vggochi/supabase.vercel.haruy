@@ -1,48 +1,39 @@
-// =============================================================
-// data/database.js — Banco de Dados em Memória
-// =============================================================
-// O que é isso?
-//   Em vez de usar um banco de dados real (como MySQL ou MongoDB),
-//   guardamos os dados aqui mesmo, dentro de arrays do JavaScript.
-//   Isso funciona enquanto o servidor está ligado.
-//   Quando o servidor reinicia, os dados voltam para o estado inicial.
-//
-// Por que usar isso nas aulas?
-//   Simplifica o aprendizado! Não precisamos instalar e configurar
-//   um banco de dados externo. O foco é aprender a API e os Middlewares.
-// =============================================================
-
-// ─── Tabela de Categorias ─────────────────────────────────────
-// Cada categoria agrupa produtos relacionados no cardápio.
 let categorias = [
-    { id: 1, nome: 'Combinados' },
-    { id: 2, nome: 'Temakis' },
-    { id: 3, nome: 'Bebidas' }
+    { id:1, nome: "Temaki" },
+    { id:2, nome: "Combinados" },
+    { id:3, nome: "Bebidas" },
+    { id:4, nome: "Sobremesas" }
 ];
 
-// ─── Tabela de Produtos ───────────────────────────────────────
-// Cada produto tem um ID único, pertence a uma categoria (categoriaId),
-// e possui nome, descrição, preço e o nome do arquivo de imagem.
 let produtos = [
     {
-        id: 1,
         categoriaId: 1,
-        nome: 'Combinado Salmão 20 Peças',
-        descricao: 'Sashimis, niguiris e uramakis de salmão fresco.',
-        preco: 89.90,
-        imagem: 'combinado1.png'
+        nome: "Temaki Completo",
+        descricao: "Temaki com slmão, atum, kani, cream cheese e cebolinha.",
+        preco: 35.50,
+        imagem: "https://cdn.casaeculinaria.com/wp-content/uploads/2023/12/20095333/Temaki-de-salmao-1.webp"
     },
     {
-        id: 2,
         categoriaId: 2,
-        nome: 'Temaki Filadélfia',
-        descricao: 'Salmão, cream cheese e cebolinha.',
-        preco: 35.00,
-        imagem: 'temaki-fila.png'
+        nome: "Combinado de Sushi",
+        descricao: "Combinado com 20 peças de sushi variados.",
+        preco: 85.00,
+        imagem: "https://kingtemaki.com.br/lojas/wp-content/uploads/2020/03/combinados.jpg"
+    },
+    {
+        categoriaId: 3,
+        nome: "Coca-Cola Lata",
+        descricao: "Lata de refrigerante de 350ml.",
+        preco: 7.50,
+        imagem: "https://conteudo.imguol.com.br/c/entretenimento/ee/2023/02/13/refrigerante-com-limao-1676325630752_v2_450x450.jpg"
+    },
+    {
+        categoriaId: 4,
+        nome: "Mochi de Morango",
+        descricao: "Sobremesa japonesa à base de arroz e recheio de morango.",
+        preco: 12.00,
+        imagem: "https://receitaki.com.br/imagens/receitas/487/receita-de-mochi-de-morango-como-fazer.webp"
     }
 ];
 
-// ─── Exportação dos dados ─────────────────────────────────────
-// Exportamos as duas variáveis num único objeto para que outros
-// arquivos (como as rotas) possam importar e usar esses dados.
 module.exports = { categorias, produtos };
